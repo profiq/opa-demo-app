@@ -1,0 +1,12 @@
+{
+    "name": "auth-opa",
+    "version": "1.0.0",
+    "main": "app.js",
+    "license": "MIT",
+    "dependencies": {
+        "axios": "^0.19.2",
+        "express": "^4.16.4",
+        "morgan": "^1.9.1",
+        "cors": "^2.8.5"
+    }
+}

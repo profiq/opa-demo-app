@@ -1,0 +1,112 @@
+version: '3'
+
+services:
+  gateway:
+    build: 
+      context: traefik
+    image: traefik-gateway
+    ports:
+      - "80:80"
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    depends_on:
+      - middleware-auth-opa
+      - course-service
+      - auth-service
+      - user-service
+      - enroll-service
+      - frontend
+    networks:
+      - "private"
+      - "public"
+
+  opa:
+    build: 
+      context: opa
+    image: open-policy-agent
+    ports:
+      - "8181:8181"
+    depends_on:
+      - course-service
+    networks:
+      - "public"
+      - "private"
+    volumes:
+      - share-volume:/share
+
+  middleware-auth-opa:
+    build: 
+      context: middleware
+    image: middleware-nodejs
+    ports:
+      - "80"
+    networks:
+      - "private"
+    depends_on:
+      - opa
+
+  course-service:
+    build: 
+      context: services/courses
+    image: courses-service-flask 
+    ports: 
+      - "5000"
+    networks:
+      - "private"
+    volumes:
+      - share-volume:/app/share
+
+  auth-service:
+    build: 
+      context: services/auth
+    image: auth-service-flask 
+    ports: 
+      - "5001"
+    networks:
+      - "private"
+
+  user-service:
+    build: 
+      context: services/users
+    image: user-service-golang
+    ports:
+      - "10000"
+    networks:
+      - "private"  
+    depends_on:
+      - course-service
+    volumes:
+      - share-volume:/app/share
+
+  enroll-service:
+    build:
+      context: services/enroll
+    image: enroll_service_nodejs
+    ports:
+      - "3001"
+    networks:
+      - "private"
+    depends_on:
+      - course-service
+    volumes:
+      - share-volume:/share
+
+  frontend:
+    build:
+      context: frontend
+    image: react-frontend
+    networks:
+      - "public"
+
+volumes:
+  share-volume:
+
+networks:
+  public:
+    internal: false
+  private:
+    internal: true
+
+
+    

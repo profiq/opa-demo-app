@@ -1,0 +1,5 @@
+node_modules
+build
+traefik
+docker-compose.yml
+readme.md

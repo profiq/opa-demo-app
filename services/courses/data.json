@@ -1,0 +1,83 @@
+{
+    "users": {
+        "PET001": {
+            "name": "Jack Peterson",
+            "role": "teacher"
+        },
+        "JOH001": {
+            "name": "Marry Johnson",
+            "role": "teacher"
+        },
+        "PAR001": {
+            "name": "Peter Parker",
+            "role": "teacher"
+        },
+        "SMA001": {
+            "name": "Richard Small",
+            "role": "student",
+            "course": ["CAL"]
+        },
+        "GRE001": {
+            "name": "Susan Green",
+            "role": "student",
+            "course": ["PSY"]
+        },
+        "GOL001": {
+            "name": "Andy Gold",
+            "role": "student",
+            "course": ["CAL"]
+        },
+        "SMI001": {
+            "name": "Ashley Smith",
+            "role": "student",
+            "course": ["CAL"]
+        },
+        "FER001": {
+            "name": "Kurt Ferhz",
+            "role": "student",
+            "course": []
+        },
+        "GOL002": {
+            "name": "James Gold",
+            "role": "student",
+            "course": ["CAL"]
+        }
+    },
+    "courses": {
+        "CAL": {
+            "id": 1,
+            "name": "Calculus",
+            "credits": 5,
+            "time_slot": [1, 13],
+            "teachers": ["PET001", "PAR001"]
+        },
+        "PSY": {
+            "id": 2,
+            "name": "Psychology",
+            "credits": 4,
+            "time_slot": [13],
+            "teachers": ["JOH001"]
+        },
+        "ML": {
+            "id": 3,
+            "name": "Machine Learning",
+            "credits": 5,
+            "time_slot": [9, 25],
+            "teachers": ["JOH001", "PAR001"]
+        },
+        "MiEco": {
+            "id": 4,
+            "name": "Microeconomics",
+            "credits": 4,
+            "time_slot": [35],
+            "teachers": ["JOH001"]
+        },
+        "OrCh": {
+            "id": 5,
+            "name": "Organic Chemistry",
+            "credits": 5,
+            "time_slot": [12, 25],
+            "teachers": ["JOH001", "PET001"]
+        }
+    }
+}

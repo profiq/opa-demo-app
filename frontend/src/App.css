@@ -1,0 +1,86 @@
+.mainContainer {
+    padding: 18pt 0;
+}
+
+.usersDropdown {
+    padding: 0 0 0 3pt !important;
+    border: 1px solid black !important;
+    border-radius: 5pt !important;
+}
+
+.MuiMenu-list {
+    padding: 0 !important;
+}
+
+.usersDropdownArrow {
+    border-left: 1px solid black;
+    border-top-right-radius: 4pt;
+    border-bottom-right-radius: 4pt;
+    background-color: #3f51b5;
+    margin-left: 30pt !important;
+    color: white;
+}
+
+.getJWT {
+    padding: 0 3pt 0 3pt !important;
+    border: 1px solid black !important;
+    margin-right: 8pt !important;
+}
+
+.button {
+    min-width: 120pt !important;
+    padding: 0 3pt 0 3pt !important;
+    border: 1px solid black !important;
+    margin-bottom: 10pt !important;
+    border-radius: 5pt !important;
+    font-size: 11pt !important;
+}
+
+.coursesHeader {
+    border-bottom: 1px solid black !important;
+    text-align: center;
+    color: #3f51b5 !important;
+    font-weight: bold !important;
+    font-size: 12pt !important;
+}
+
+.courses {
+    border: 1px solid black !important;
+    padding: 0 !important;
+    border-radius: 5pt !important;
+}
+
+.course {
+    padding: 0 !important;
+}
+
+.course .MuiTypography-body1 {
+    font-size: 11pt !important;
+    text-align: center;
+}
+
+.apiResponse {
+    border: 1px solid black;
+    padding: 10pt 5pt;
+    border-radius: 5pt !important;
+}
+
+.apiResponseTitle {
+    margin-top: 5pt !important;
+}
+
+.courseDetail {
+    border: 1px solid black;
+    padding: 10pt 5pt 0 5pt;
+    border-radius: 5pt !important;
+    word-break: break-all;
+    max-width: 170pt;
+}
+
+.courseInput {
+    margin-bottom: 10pt !important;
+}
+
+.selectedItemMenu {
+    background-color: greenyellow !important;
+}

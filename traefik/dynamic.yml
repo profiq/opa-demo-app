@@ -1,0 +1,58 @@
+http:
+  routers:
+    user-service:
+      rule: "Host(`user.localhost`)"
+      service: user-service
+      middlewares:
+      - "middleware-auth-opa"
+
+    auth-service:
+      rule: "Host(`auth.localhost`)"
+      service: auth-service
+      middlewares:
+      - "middleware-auth-opa"
+
+    course-service:
+      rule: "Host(`course.localhost`)"
+      service: course-service
+      middlewares:
+      - "middleware-auth-opa"
+
+    enroll-service:
+      rule: "Host(`enroll.localhost`)"
+      service: enroll-service
+      middlewares:
+        - "middleware-auth-opa"
+
+    frontend:
+      rule: "PathPrefix(`/`)"
+      service: frontend
+
+  middlewares:
+    middleware-auth-opa:
+      forwardAuth:
+        address: "http://middleware-auth-opa"
+        trustForwardHeader: true
+
+
+  services:
+    user-service:
+      loadBalancer:
+        servers:
+        - url: "http://user-service:10000"
+    course-service:
+      loadBalancer:
+        servers:
+        - url: "http://course-service:5000"
+    auth-service:
+      loadBalancer:
+        servers:
+        - url: "http://auth-service:5001"
+    enroll-service:
+      loadBalancer:
+        servers:
+          - url: "http://enroll-service:3001"
+    frontend:
+      loadBalancer:
+        servers:
+        - url: "http://frontend"

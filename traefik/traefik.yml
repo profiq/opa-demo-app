@@ -1,0 +1,16 @@
+api:
+  insecure: true
+  debug: true
+
+log:
+  level: "DEBUG"
+
+entryPoints:
+  web:
+   address: ":80"
+  websecure:
+    address: ":443"
+
+providers:
+  file:
+    filename: /etc/traefik/dynamic.yml
