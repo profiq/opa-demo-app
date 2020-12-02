@@ -11,7 +11,7 @@ with the end services, the Enroll service implements a direct request asking OPA
 capacity of a course.
 
 You can find a more vivid decription of the application, as well as lessons learned during its 
-development in our [blog post](<link to second blog post here>).
+development in our blog post.
 
 ## Policies
 We implement several policies for our system, including:
@@ -39,12 +39,11 @@ docker container. Additionaly, we define a shared docker volume acting as a perm
 for course and user data. 
 
 ![Application architecture](assets/architecture.jpg)
-<!-- TODO: update link img to profiq page -->
 
 ## Running the application
 
 1. Clone this git repository and change your working folder:
-   > `git clone <repo-url> && cd <path>`
+   > `git clone git@github.com:profiq/opa-demo-app.git && cd opa-demo-app`
 2. Build and deploy predefined docker containers, volumes and networks locally with **docker-compose**
    > `docker-compose up --build`
 
